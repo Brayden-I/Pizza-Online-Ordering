@@ -6,12 +6,28 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <form>
-        <input type="text" id="customerName">
-        <input type="tel" id="customerPhone">
+    <form id="orderForm" action="thankyou.html">
+        <div>
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName">
+            <p id="nameError" class="error"></p>
+            
+            <label for="customerPhone">Your Phone Number:</label>
+            <input type="tel" id="customerPhone">
+            <p id="phoneError" class="error"></p>
+        </div>
         
-        <select id="pizzaSelect"></select>
-        <select id="quantitySelect"></select>
+        <div>
+            <label for="pizzaSelect">Please select the pizza you would like to order:</label>
+            <select id="pizzaSelect"></select>
+            <p id="pizzaError" class="error"></p>
+            
+            <label for="quantitySelect">Please select the number of pizzas you would like:</label>
+            <select id="quantitySelect"></select>
+            <p id="quantityError" class="error"></p>
+        </div>
+        
+        <button type="submit"></button>
     </form>
 </body>
 </html>
