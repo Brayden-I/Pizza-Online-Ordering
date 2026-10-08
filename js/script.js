@@ -35,36 +35,65 @@ for (i = 0; i < MAX_QUANTITY; i++) {
     option.textContent = i;
     quantitySelector.appendChild(option);
 }
+// Valid handlers
+function showError(input, errorElement, message){
+    errorElement.textContent = message;
+    input.classList.add("invalid");
+    input.setAttribute("aria-invalid", "true");
+}
+function clearError(input, errorElement){
+    errorElement.textContent = "";
+    input.classList.remove("invalid");
+    input.removeAttribute("aria-invalid", "true");
+}
 
 // Form Validators
 function nameValidation() {
     const nameInput = customerName.value.trim();
     
     if (nameInput === ""){
+        showError(customerName, nameError, "Name is required");
         return false;
     }
-    if (nameInput.value.length < 5) {
+    if (nameInput.length < 5) {
+        showError(customerName, nameError, "Name must at least be 5 characters long. Sorry Alex");
         return false;
     }
+    clearError(customerName, nameError);
     return true;
 }
 function phoneValidation() {
     const phoneInput = customerPhone.value.trim();
     if (phoneInput === ""){
+        showError(customerPhone, phoneError, "Phone is required");
         return false;
     }
-    if (phoneInput.value.length < 10) {
+    if (!PHONE_PATTERN.test(phoneInput)){
+        showError(customerPhone, phoneError, "Phone pattern must be ###-###-####");
         return false;
     }
-    return PHONE_PATTERN.test(phoneInput.value);
+    clearError(customerPhone, phoneError);
+    return true;
 }
 function pizzaValidation() {
     const pizzaInput = pizzaSelector.value.trim();
-    return pizzaInput !== "";
+    
+    if (pizzaInput === ""){
+        showError(pizzaSelector, pizzaError, "Pizza is required");
+        return false;
+    }
+    clearError(pizzaSelector, pizzaError);
+    return true;
 }
 function quantityValidation() {
     const quantityInput = quantitySelector.value.trim();
-    return quantityInput !== "";
+    
+    if (quantityInput === ""){
+        showError(quantitySelector, quantityError, "Quantity is required");
+        return false;
+    }
+    clearError(quantitySelector, quantityError);
+    return true;
 }
 
 // Event listeners
@@ -82,7 +111,6 @@ orderForm.addEventListener("submit", (event) => {
     
     if (!allValid) {
         return;
-        // TODO: add error messages
     }
     
     orderForm.submit();
