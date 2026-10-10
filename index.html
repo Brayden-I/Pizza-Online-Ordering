@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form id="orderForm" action="thankyou.html">
+    <form id="orderForm" action="thankyou.html" method="get" novalidate>
         <div>
             <label for="customerName">Your Name:</label>
-            <input type="text" id="customerName">
+            <input type="text" id="customerName" name="customerName">
             <p id="nameError" class="error"></p>
             
             <label for="customerPhone">Your Phone Number:</label>
-            <input type="tel" id="customerPhone">
+            <input type="tel" id="customerPhone" name="customerPhone">
             <p id="phoneError" class="error"></p>
         </div>
         
         <div>
             <label for="pizzaSelect">Please select the pizza you would like to order:</label>
-            <select id="pizzaSelect"></select>
+            <select id="pizzaSelect" name="pizzaSelect"></select>
             <p id="pizzaError" class="error"></p>
             
             <label for="quantitySelect">Please select the number of pizzas you would like:</label>
-            <select id="quantitySelect"></select>
+            <select id="quantitySelect" name="quantitySelect"></select>
             <p id="quantityError" class="error"></p>
         </div>
         
