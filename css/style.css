@@ -1,5 +1,182 @@
+/* Cheech's Pizza - shared styles */
+
+:root {
+    --red: #c0392b;
+    --red-dark: #962d22;
+    --cream: #fdf6ec;
+    --ink: #2d2420;
+    --muted: #6b5f58;
+    --line: #e5d9c8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--cream);
+}
+
+/* Header and footer */
+.site-header {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #fff;
+    background: var(--red);
+}
+
+.brand {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.tagline {
+    margin: 0.25rem 0 0;
+    opacity: 0.9;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+/* Card */
+.card {
+    width: min(100% - 2rem, 480px);
+    margin: 2rem auto;
+    padding: 1.75rem;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(45, 36, 32, 0.08);
+}
+
+h2 {
+    margin: 0 0 0.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--red-dark);
+}
+
+.intro {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+}
+
+/* Form */
+.field {
+    margin-bottom: 1.1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid #cdbfae;
+    border-radius: 6px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--red);
+    outline-offset: 1px;
+}
+
 input.invalid,
 select.invalid {
-    color: red;
-    font-weight: bold;
+    border-color: var(--red);
+    background: #fdf0ee;
+}
+
+.error {
+    margin: 0.3rem 0 0;
+    font-size: 0.875rem;
+    color: var(--red-dark);
+}
+
+/* Buttons */
+button,
+.button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: var(--red);
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: var(--red-dark);
+}
+
+button:focus-visible,
+.button:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+}
+
+/* Receipt */
+.receipt-section {
+    margin: 0 0 1.25rem;
+    padding: 0.5rem 1rem;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.receipt-section div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.45rem 0;
+}
+
+.receipt-section div + div {
+    border-top: 1px solid var(--line);
+}
+
+.receipt-section dt {
+    color: var(--muted);
+}
+
+.receipt-section dd {
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+}
+
+.grand-total {
+    font-size: 1.15rem;
+    color: var(--red-dark);
+}
+
+.grand-total dt {
+    font-weight: 700;
+    color: inherit;
 }

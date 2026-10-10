@@ -2,33 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="js/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cheech's Pizza | Order Online</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+<header class="site-header">
+    <h1 class="brand">Cheech's Pizza</h1>
+    <p class="tagline">Fresh out of the oven, every time.</p>
+</header>
+
+<main class="card">
+    <h2>Place Your Order</h2>
+    <p class="intro">Every pizza is $9.49. Choose one type and how many you'd like.</p>
+
     <form id="orderForm" action="thankyou.html" method="get" novalidate>
-        <div>
-            <label for="customerName">Your Name:</label>
-            <input type="text" id="customerName" name="customerName">
+        <div class="field">
+            <label for="customerName">Your Name</label>
+            <input type="text" id="customerName" name="customerName" autocomplete="name" placeholder="Jane Doe">
             <p id="nameError" class="error"></p>
-            
-            <label for="customerPhone">Your Phone Number:</label>
-            <input type="tel" id="customerPhone" name="customerPhone">
+        </div>
+
+        <div class="field">
+            <label for="customerPhone">Your Phone Number</label>
+            <input type="tel" id="customerPhone" name="customerPhone" autocomplete="tel" placeholder="555-123-4567">
             <p id="phoneError" class="error"></p>
         </div>
-        
-        <div>
-            <label for="pizzaSelect">Please select the pizza you would like to order:</label>
+
+        <div class="field">
+            <label for="pizzaSelect">Pizza</label>
             <select id="pizzaSelect" name="pizzaSelect"></select>
             <p id="pizzaError" class="error"></p>
-            
-            <label for="quantitySelect">Please select the number of pizzas you would like:</label>
+        </div>
+
+        <div class="field">
+            <label for="quantitySelect">Number of pizzas</label>
             <select id="quantitySelect" name="quantitySelect"></select>
             <p id="quantityError" class="error"></p>
         </div>
-        
-        <button type="submit"></button>
+
+        <button type="submit">Place Order</button>
     </form>
+</main>
+
+<footer class="site-footer">&copy; 2026 Cheech's Pizza</footer>
 </body>
 </html>

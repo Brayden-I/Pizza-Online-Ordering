@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cheech's Pizza | Thank You</title>
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/thankyou.js" defer></script>
 </head>
 <body>
-    <dl>
+<header class="site-header">
+    <h1 class="brand">Cheech's Pizza</h1>
+    <p class="tagline">Fresh out of the oven, every time.</p>
+</header>
+
+<main class="card">
+    <h2>Thank you for your order!</h2>
+    <p class="intro">Here is your receipt.</p>
+
+    <dl class="receipt-section">
         <div>
             <dt>Customer</dt>
             <dd id="receiptName"></dd>
@@ -25,7 +36,7 @@
         </div>
     </dl>
 
-    <dl>
+    <dl class="receipt-section totals">
         <div>
             <dt id="priceLabel">Subtotal</dt>
             <dd id="receiptSubtotal"></dd>
@@ -34,10 +45,15 @@
             <dt>Sales tax (7.6%)</dt>
             <dd id="receiptTax"></dd>
         </div>
-        <div>
+        <div class="grand-total">
             <dt>Total</dt>
             <dd id="receiptTotal"></dd>
         </div>
     </dl>
+
+    <a class="button" href="index.html">Place Another Order</a>
+</main>
+
+<footer class="site-footer">&copy; 2026 Cheech's Pizza</footer>
 </body>
 </html>
